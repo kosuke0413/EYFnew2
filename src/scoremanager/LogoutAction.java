@@ -1,17 +1,19 @@
 
-package scoremanager.main;
+package scoremanager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tool.Action;
 
-public class MenuAction extends Action{
+public  class LogoutAction extends Action{
+
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		//ローカル変数の宣言 1
-		//なし
+		HttpSession session=req.getSession();
 		//リクエストパラメータ―の取得 2
 		//なし
 		//DBからデータ取得 3
@@ -21,9 +23,9 @@ public class MenuAction extends Action{
 		//DBへデータ保存 5
 		//なし
 		//レスポンス値をセット 6
-		//なし
+		session.invalidate();
 		//JSPへフォワード 7
-		req.getRequestDispatcher("menu.jsp").forward(req, res);
+		req.getRequestDispatcher("logout.jsp").forward(req, res);
 	}
 
 }
