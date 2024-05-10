@@ -92,7 +92,7 @@ public class TestDao extends Dao{
 				test.setPoint(rSet.getInt("point"));
 				test.setNo(rSet.getInt("no"));
 				test.setClassNum(rSet.getString("class_num"));
-				test.setSubject(subjectDao.get(rSet.getString("subject_cd")));
+				test.setSubject(subjectDao.get(rSet.getString("subject_cd"), school));
 				test.setSchool(school);
 				list.add(test);
 			}
