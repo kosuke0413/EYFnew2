@@ -62,8 +62,13 @@ public class SubjectCreateExecuteAction extends Action {
 				subject.setCd(cd);
 				subject.setName(name);
 				subject.setSchool(((Teacher)session.getAttribute("user")).getSchool());
+				int oo=cd.length();
+				if(oo != 3){
+					errors.put("cd", "科目コードは三文字で入力してね！");
+				}else{
 				// 学生を保存
 				sDao.save(subject);
+				}
 			} else {			//入力された科目コードがDBに保存されていた場合
 				errors.put("cd", "科目コードが重複しています");
 			}

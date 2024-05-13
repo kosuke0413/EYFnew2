@@ -84,7 +84,7 @@ public class SubjectDao extends Dao{
 		return list;
 	}
 	//フィルター（出力）
-	public List<Subject> filter(School school)throws Exception {
+	public List<Subject> filter(School school,boolean isAttend)throws Exception {
 		//リストを初期化
 	    List<Subject> list = new ArrayList<>();
 	    //コネクションを確立
@@ -93,9 +93,14 @@ public class SubjectDao extends Dao{
 	    PreparedStatement statement = null;
 	    //リザルトセット
 	    ResultSet rSet = null;
+	    //在学フラグがtrueの場合
+	    String conditionIsAttend = "";
+	    if (isAttend) {
+	    conditionIsAttend = "and is_attend=true";
+	}
 	    try {
 		    //プリペアードステートメントにSQL文をセット
-		    statement = connection. prepareStatement (baseSql);
+		    statement = connection. prepareStatement (baseSql+ conditionIsAttend);
 		    //プリペアードステートメントに学校コードをバインド
 		    statement. setString(1, school. getCd ());
 		    // プライベートステートメントを実行
