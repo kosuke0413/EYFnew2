@@ -58,7 +58,7 @@ public class TestRegistAction extends Action{
 
 		//DBからデータ取得 3
 		// ログインユーザーの学校コードをもとに科目番号の一覧を取得
-		List<Subject> subject_list = sDao.filter(teacher.getSchool());
+		List<Subject> subject_list = sDao.filter(teacher.getSchool() ,true);
 		// ログインユーザーの学校コードをもとにクラス番号の一覧を取得
 		List<String> list = cNumDao.filter(teacher.getSchool());
 
