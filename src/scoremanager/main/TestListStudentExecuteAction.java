@@ -47,7 +47,7 @@ public class TestListStudentExecuteAction extends Action {
 		// ログインユーザーの学校コードをもとにクラス番号の一覧を取得
 		List<String> cNumlist = cNumDao.filter(teacher.getSchool());
 		//ログインユーザーの学校コードをもとに科目の一覧を取得
-		List<Subject> sublist = subDao.filter(teacher.getSchool());
+		List<Subject> sublist = subDao.filter(teacher.getSchool(),true);
 
 		try{
 		student = sDao.get(no);// 学生番号から学生インスタンスを取得
