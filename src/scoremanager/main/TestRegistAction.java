@@ -2,7 +2,9 @@ package scoremanager.main;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +25,7 @@ public class TestRegistAction extends Action{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		//ローカル変数の宣言 1
-	HttpSession session = req.getSession(true);// セッションを取得
+		HttpSession session = req.getSession(true);// セッションを取得
 		ClassNumDao cNumDao = new ClassNumDao();// クラス番号Daoを初期化
 		Teacher teacher = (Teacher)session.getAttribute("user");//ログインユーザー
 
@@ -39,10 +41,11 @@ public class TestRegistAction extends Action{
 		Subject subject = null;//科目
 		LocalDate todaysDate = LocalDate.now();// LcalDateインスタンスを取得
 		int year = todaysDate.getYear();// 現在の年を取得
-		@SuppressWarnings("unused")
 		Subject sub = new Subject();
 		TestDao tDao = new TestDao();
 		SchoolDao scDao = new SchoolDao();
+		Map<String, String> errors = new HashMap<>();// エラーメッセージ
+
 
 
 		//リクエストパラメータ―の取得 2
@@ -59,7 +62,8 @@ public class TestRegistAction extends Action{
 		// ログインユーザーの学校コードをもとにクラス番号の一覧を取得
 		List<String> list = cNumDao.filter(teacher.getSchool());
 
-		subject = sDao.get(subjectStr, school);
+
+		subject = sDao.get(subjectStr,teacher.getSchool());
 
 		if (entYearStr != null) {
 			// 数値に変換
@@ -72,7 +76,7 @@ public class TestRegistAction extends Action{
 			no = Integer.parseInt(num);
 		}
 
-		if (entYear != 0 && classNum != "" ) {
+		if (entYear != 0 && classNum != "0" && subjectStr != "0" && no != 0) {
 
 			school = scDao.get(teacher.getSchool().getCd());
 
@@ -108,7 +112,14 @@ public class TestRegistAction extends Action{
 		}
 
 		//DBへデータ保存 5
-		//なし
+
+		if (entYear == 0 || classNum == "0" || subjectStr == "0" || no == 0 ){
+			errors.put("f1", "入学年度とクラスと科目と回数を選択してください");
+			req.setAttribute("errors", errors);
+		}
+
+
+
 		//レスポンス値をセット 6
 
 		req.setAttribute("f1", entYear);
@@ -125,7 +136,9 @@ public class TestRegistAction extends Action{
 		//JSPへフォワード 7
 		req.getRequestDispatcher("test_regist.jsp").forward(req, res);
 	}
-}
+
 //	private void setRequestData(HttpServletRequest req, HttpServletResponse res) throws Exception {
 //
-//
+//	}
+
+}

@@ -1,0 +1,122 @@
+@CHARSET "UTF-8";
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/*背景*/
+.btn-wrap {
+  margin: 20px;
+}
+
+a.btn-c {
+  font-size: 2rem;
+
+  padding: 1.5rem 4rem 1.5rem 4rem;
+
+  -webkit-transform: skew(-15deg);
+
+  transform: skew(-15deg);
+
+  color: #fff;
+  border-radius: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f83600),
+    to(#f9d423)
+  );
+  background-image: -webkit-linear-gradient(left, #f83600 0%, #f9d423 100%);
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+a.btn-c i.fa {
+  margin-right: 1rem;
+}
+
+a.btn-c:before {
+  position: absolute;
+  top: 46%;
+  right: 0;
+
+  width: 3rem;
+  height: 1px;
+
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  background: #fff;
+}
+
+a.btn-c:after {
+  position: absolute;
+  top: 55%;
+  right: 1rem;
+
+  width: 2rem;
+  height: 1px;
+
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  background: #fff;
+}
+
+a.btn-c:hover {
+  -webkit-transform: skew(0);
+  transform: skew(0);
+
+  color: #fff;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+a.btn-c:hover:before {
+  right: -1.5rem;
+
+  background: #f83600;
+}
+
+a.btn-c:hover:after {
+  right: -1rem;
+
+  background: #f83600;
