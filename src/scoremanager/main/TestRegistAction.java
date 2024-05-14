@@ -58,7 +58,11 @@ public class TestRegistAction extends Action{
 
 		//DBからデータ取得 3
 		// ログインユーザーの学校コードをもとに科目番号の一覧を取得
+<<<<<<< HEAD
 		List<Subject> subject_list = sDao.filter(teacher.getSchool() ,true);
+=======
+		List<Subject> subject_list = sDao.filter(teacher.getSchool(),true);
+>>>>>>> branch 'master' of https://github.com/kosuke0413/EYFnew2.git
 		// ログインユーザーの学校コードをもとにクラス番号の一覧を取得
 		List<String> list = cNumDao.filter(teacher.getSchool());
 
