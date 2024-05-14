@@ -8,7 +8,7 @@
 <c:if test="${user.isAuthenticated()}">
 	<div>
 		<span>${user.getName()}様</span>
-		<a href="Logout.action">ログアウト</a>
+		<a href="../Logout.action">ログアウト</a>
 	</div>
 </c:if>
 <%--aaaa--%>
