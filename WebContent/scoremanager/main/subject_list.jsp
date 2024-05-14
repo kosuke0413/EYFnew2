@@ -9,8 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>得点管理システム</title>
 </head>
+<%--ヘッダー
+<c:import url="../common/header.jsp"/>--%>
 <body>
-
+<%--ナビゲーション --%>
 	<h2>科目管理</h2>
 <a href="SubjectCreate.action">☆新規登録</a>
 <a href="SubjectReturn.action">☆ゴミ箱</a>
@@ -49,4 +51,6 @@
 	<a href="Menu.action">メインへ戻る</a>
 
 </body>
+<%--フッター
+<c:import url="../common/footer.jsp"/>--%>
 </html>
