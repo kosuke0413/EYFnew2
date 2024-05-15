@@ -44,8 +44,9 @@ public class TeacherDao extends Dao{
 			//セットするものは[password]じゃなくて「pasword]だよ
 			if(rSet.next()) {
 				teacher.setId(rSet.getString("id"));
-				teacher.setPassword("pasword");
-				//teacher.setName("name");
+				teacher.setPassword(rSet.getString("pasword"));
+				teacher.setName(rSet.getString("name"));
+				System.out.println(rSet.getString("name"));
 				teacher.setSchool(schoolDao.get("school_cd"));
 			} else {
 				//対応する教員がいない場合はnullを返す
@@ -114,7 +115,7 @@ public class TeacherDao extends Dao{
 			if(rSet.next()) {
 				teacher.setId(rSet.getString("id"));
 				teacher.setPassword(rSet.getString("pasword"));
-				//teacher.setName(rSet.getString("name"));
+				teacher.setName(rSet.getString("name"));
 				teacher.setSchool(schoolDao.get(rSet.getString("school_cd")));
 			} else {
 				//対応する教員がいない場合はnullを返す
