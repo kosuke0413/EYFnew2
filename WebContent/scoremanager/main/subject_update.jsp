@@ -19,7 +19,7 @@
 
 		<label>科目名</label>
 		<input type="text" name="name"
-			maxlength="10" value="${name}" required />
+			maxlength="20" value="${name}" required />
 		<div>${errors.get("name")}</div>
 
 		<input type="submit" value="変更">
