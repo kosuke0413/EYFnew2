@@ -44,7 +44,7 @@ public class TeacherDao extends Dao{
 			//セットするものは[password]じゃなくて「pasword]だよ
 			if(rSet.next()) {
 				teacher.setId(rSet.getString("id"));
-				teacher.setPassword(rSet.getString("pasword"));
+				teacher.setPassword(rSet.getString("pasword"));//DBにセットする内容カラム名を書く
 				teacher.setName(rSet.getString("name"));
 				teacher.setSchool(schoolDao.get("school_cd"));
 			} else {

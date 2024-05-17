@@ -35,15 +35,6 @@ public class LoginExecuteAction extends Action{
 		teacher=teacherDAO.login(id,password);
 		//なし
 		//ビジネスロジック 4
-/*
-		teacher.setId(id);
-		teacher.setPassword(password);
-		teacher.setName(name);
-
-		school.setCd(school_cd);
-		school.setName("金沢情報ITクリエイター専門学校");
-
-		teacher.setSchool(school);//School型*/
 
 		// 認証済みフラグを立てる
 //		teacher.setAuthenticated(true);
@@ -61,7 +52,7 @@ public class LoginExecuteAction extends Action{
 
 
 				//リダイレクト
-			url = "main/Menu.action";
+			url = "main/Menu.action";//飛ばすぜ
 			res.sendRedirect(url);
 		}else{
 				System.out.println("ffff");
