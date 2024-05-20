@@ -7,12 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>成績参照システム</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>成績参照</h1>
 
 	<h3>科目情報</h3>
-	<form action = "TestListSubjectExecute.action" method="post">
+	<form action="TestListSubjectExecute.action" method="post">
 		<label>入学年度</label>
 		<select name="ent_year" required>
 		    <option value="0">--------</option>
@@ -36,16 +37,20 @@
 		        <option value="${sub.getCd()}" <c:if test="${sub.getCd()==f3}">selected</c:if>>${sub.getName()}</option>
 		    </c:forEach>
 		</select>
-		<input type="submit" value="検索">
+		<div class="btn-wrap">
+			<input type="submit" value="検索" class="btn btn-c">
+		</div>
 	</form>
 
 	<h3>学生情報</h3>
-	<form action = "TestListStudentExecute.action" method="post">
+	<form action="TestListStudentExecute.action" method="post">
 		<label>学生番号</label>
 		<input type="text" name="no"
 			placeholder="学生番号を入力してください" maxlength="10" value="${no}" required />
 		<div>${errors.get("no")}</div>
-		<input type="submit" value="検索">
+		<div class="btn-wrap">
+			<input type="submit" value="検索" class="btn btn-c">
+		</div>
 	</form>
 
 	<c:if test="${not empty test_students}">
@@ -69,8 +74,7 @@
 						<td>${student.subjectCd}</td>
 						<td>${student.num}</td>
 						<td>${student.point}</td>
-						<td class="text-center">
-						</td>
+						<td class="text-center"></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -84,41 +88,42 @@
 	<div>${errors.get("nullpo2")}</div>
 
 	<c:if test="${not empty test_subjects}">
-    <p>${sub_name}</p>
-    <c:choose>
-        <c:when test="${not empty test_subjects[0].studentNo}">
-            <div>検索結果：${test_subjects.size()}件</div>
+	<p>${sub_name}</p>
+	<c:choose>
+		<c:when test="${not empty test_subjects[0].studentNo}">
+			<div>検索結果：${test_subjects.size()}件</div>
 
-            <table class="table table-hover">
-                <tr>
-                    <th>入学年度</th>
-                    <th>クラス</th>
-                    <th>学生番号</th>
-                    <th>氏名</th>
-                    <th>1回</th>
-                    <th>2回</th>
-                </tr>
-                <c:forEach var="subject" items="${test_subjects}">
-                    <tr>
-                        <td>${subject.entYear}</td>
-                        <td>${subject.classNum}</td>
-                        <td>${subject.studentNo}</td>
-                        <td>${subject.studentName}</td>
-                        <td>${subject.getPoint(1)}</td>
-                        <td>${subject.getPoint(2)}</td>
-                        <td class="text-center">
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:when>
-        <c:otherwise>
-            <div>学生情報が存在しませんでした</div>
-        </c:otherwise>
-    </c:choose>
-</c:if>
+			<table class="table table-hover">
+				<tr>
+					<th>入学年度</th>
+					<th>クラス</th>
+					<th>学生番号</th>
+					<th>氏名</th>
+					<th>1回</th>
+					<th>2回</th>
+				</tr>
+				<c:forEach var="subject" items="${test_subjects}">
+					<tr>
+						<td>${subject.entYear}</td>
+						<td>${subject.classNum}</td>
+						<td>${subject.studentNo}</td>
+						<td>${subject.studentName}</td>
+						<td>${subject.getPoint(1)}</td>
+						<td>${subject.getPoint(2)}</td>
+						<td class="text-center"></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:when>
+		<c:otherwise>
+			<div>学生情報が存在しませんでした</div>
+		</c:otherwise>
+	</c:choose>
+	</c:if>
 
-	<a href="Menu.action">戻る</a>
+	<div class="btn-wrap">
+		<a href="Menu.action" class="btn btn-c"><i class="fas fa-arrow-left"></i> 戻る</a>
+	</div>
 
 </body>
 </html>
