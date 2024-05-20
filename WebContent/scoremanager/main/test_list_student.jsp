@@ -65,8 +65,6 @@
 					<th>科目コード</th>
 					<th>回数</th>
 					<th>点数</th>
-					<th></th>
-					<th></th>
 				</tr>
 				<c:forEach var="student" items="${test_students}">
 					<tr>
