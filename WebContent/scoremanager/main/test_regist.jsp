@@ -86,6 +86,7 @@
 			<input type="hidden" name="f4" value="${f4}"/>
 			<input type="submit"  value="登録して終了">
 			</form>
+				<a href="SubjectList.action">科目一覧へもどる</a>
 		</c:when>
 	</c:choose>
 

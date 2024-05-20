@@ -16,14 +16,13 @@
 	<form action = "SubjectCreateExecute.action" method="post">
 
 		<label>科目コード</label>
-		<input type="text" name="cd"
-			placeholder="科目コードを入力してください" maxlength=3" value="${cd}" required />
+		<input type="text"
+			name="cd" placeholder="科目コードを入力してください" maxlength=3"value="${cd}" required />
 		<div>${errors.get("cd")}</div>
 
 		<label>科目名</label>
 		<input type="text"
-			name="name" placeholder="科目名を入力してください" maxlength="20"
-			value="${name}" required />
+			name="name" placeholder="科目名を入力してください" maxlength="20" value="${name}" required />
 		<div>${errors.get("name")}</div>
 
 

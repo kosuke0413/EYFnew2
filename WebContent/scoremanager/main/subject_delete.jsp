@@ -22,6 +22,6 @@
 
 	</form>
 
-	<a href="Menu.action">戻る</a>
+	<a href="SubjectList.action">戻る</a>
 </body>
 </html>
