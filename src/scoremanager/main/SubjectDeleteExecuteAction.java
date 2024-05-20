@@ -46,7 +46,7 @@ public void execute(HttpServletRequest req, HttpServletResponse res) throws Exce
 
 				sDao.delete(subject);
 			} else {
-				errors.put("cd", "学生が存在していません");
+				errors.put("cd", "科目が存在していません");
 			}
 
 			//エラーがあったかどうかで手順6~7の内容が分岐
@@ -57,7 +57,7 @@ public void execute(HttpServletRequest req, HttpServletResponse res) throws Exce
 				// リクエスト属性をセット
 				req.setAttribute("errors", errors);
 				req.setAttribute("cd", cd);
-				req.getRequestDispatcher("subject_delete.jsp").forward(req, res);
+				req.getRequestDispatcher("subject_list.jsp").forward(req, res);
 				return;
 			}
 

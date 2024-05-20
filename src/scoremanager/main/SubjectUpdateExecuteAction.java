@@ -60,7 +60,7 @@ public class SubjectUpdateExecuteAction extends Action {
 			req.setAttribute("errors", errors);
 			req.setAttribute("cd", cd);
 			req.setAttribute("name", name);
-			req.getRequestDispatcher("subject_update.jsp").forward(req, res);
+			req.getRequestDispatcher("subject_list.jsp").forward(req, res);
 			return;
 		}
 

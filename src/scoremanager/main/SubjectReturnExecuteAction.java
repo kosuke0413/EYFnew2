@@ -43,7 +43,7 @@ public void execute(HttpServletRequest req, HttpServletResponse res) throws Exce
 //データ削除復元用
 				sDao.delete_return(subject);
 			} else {
-				errors.put("cd", "学生が存在していません");
+				errors.put("cd", "科目が存在していません");
 			}
 
 			//エラーがあったかどうかで手順6~7の内容が分岐

@@ -53,7 +53,7 @@ public class StudentUpdateExecuteAction extends Action {
 			// 学生を保存
 			sDao.save(student);
 		} else {
-			errors.put("no", "学生が存在していません");
+			errors.put("cd", "科目が存在していません");
 		}
 
 		//エラーがあったかどうかで手順6~7の内容が分岐

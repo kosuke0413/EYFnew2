@@ -14,7 +14,6 @@
 <form method="get">
 	</form>
 	<c:choose>
-	<!-- 削除済みの件数を求める -->
 		<c:when test="${subjects.size()>0}">
 			<div>検索結果：${subjects.size()}件</div>
 
@@ -39,10 +38,9 @@
 			</table>
 		</c:when>
 		<c:otherwise>
-			<div>学生情報が存在しませんでした</div>
+			<div>科目情報が存在しませんでした</div>
 		</c:otherwise>
 	</c:choose>
-	<a href="SubjectList.action">メインへ戻る</a>
-
+	<a href="SubjectList.action">戻る</a>
 </body>
 </html>

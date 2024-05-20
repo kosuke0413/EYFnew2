@@ -45,7 +45,7 @@
 			</table>
 		</c:when>
 		<c:otherwise>
-			<div>学生情報が存在しませんでした</div>
+			<div>科目情報が存在しませんでした</div>
 		</c:otherwise>
 	</c:choose>
 	<a href="Menu.action">メインへ戻る</a>
