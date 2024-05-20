@@ -13,7 +13,8 @@
 	<h2>科目情報変更</h2>
 	<form action = "SubjectUpdateExecute.action" method="post">
 
-
+	<!-- 選択した科目のCDとNAMEがでてくる -->
+	<!-- 科目コードは変更不可なのでhiddenで対応 -->
 		<label>科目番号</label> ${cd}
 		<input type="hidden" name="cd" value="${cd}">
 

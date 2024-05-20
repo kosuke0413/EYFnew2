@@ -1,4 +1,4 @@
-<%-- 科目一覧JSP --%>
+<%-- 科目削除済み一覧JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,6 +14,7 @@
 <form method="get">
 	</form>
 	<c:choose>
+	<!-- 削除済みの件数を求める -->
 		<c:when test="${subjects.size()>0}">
 			<div>検索結果：${subjects.size()}件</div>
 
@@ -31,7 +32,6 @@
 						<td class="text-center">
 
 						</td>
-		<!-- 削除はまだできてない -->
 		 <td><a href="SubjectReturnExecute.action?cd=${subject.cd}">元に戻す</a></td>
 					</tr>
 				</c:forEach>

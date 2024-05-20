@@ -1,4 +1,4 @@
-<%-- 科目更新JSP --%>
+<%-- 科目削除JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -21,7 +21,7 @@
 		<input type="submit" value="削除">
 
 	</form>
-
+ <!-- 科目一覧画面 -->
 	<a href="SubjectList.action">戻る</a>
 </body>
 </html>

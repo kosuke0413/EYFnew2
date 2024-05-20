@@ -15,6 +15,7 @@
 	<!-- 入力されたデータは↓のURLに飛ぶ -->
 	<form action = "SubjectCreateExecute.action" method="post">
 
+<!-- 登録コードと科目名を入力 -->
 		<label>科目コード</label>
 		<input type="text"
 			name="cd" placeholder="科目コードを入力してください" maxlength=3"value="${cd}" required />
