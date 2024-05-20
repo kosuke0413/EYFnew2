@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>成績参照システム</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/scoremanager/css/style.css">
 </head>
 <body>
 	<h1>成績参照</h1>
